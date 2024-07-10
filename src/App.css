@@ -1,0 +1,256 @@
+/*
+
+@author: Heera Singh Lodhi
+@date: 04-07-2024
+@desc: style for web app
+
+*/
+
+.app {
+  position: relative;
+}
+
+.app-main {
+  padding-bottom: 2rem;
+  /*background-color: red;*/
+  position: relative;
+  min-height: 85vh;
+  grid-template-columns: 1fr 3fr;
+  position: absolute;
+  gap: 25px;
+  top: 0;
+}
+
+/* tabs */
+
+.tabs {
+  background-color: var(--border-light);
+}
+
+.tabs .tab {
+  /*background-color: red;*/
+}
+
+.tabs .tab button {
+  background-color: var(--bg-primary);
+  width: 100%;
+  padding: 10px 10px;
+  color: var(--text-yellow);
+  font-weight: 600;
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+}
+
+/* ------------------------ resume ------------------------ */
+
+.timeline {
+  margin-bottom: 30px;
+}
+
+.timeline .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.timeline-list {
+  /* font-size: var(--fs-6); */
+  /* margin-left: 45px; */
+  padding-left: 0px;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.timeline-item-title {
+  font-size: var(--fs-6);
+  line-height: 1.3;
+  margin-bottom: 7px;
+}
+
+.timeline-list span {
+  color: var(--text-yellow);
+  font-weight: var(--fw-400);
+  line-height: 1.6;
+}
+
+.timeline-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -30px;
+  width: 1px;
+  height: calc(100% + 50px);
+  background: var(--jet);
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -33px;
+  height: 6px;
+  width: 6px;
+  background: var(--text-gradient-yellow);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--jet);
+}
+
+.timeline-text {
+  color: var(----text-ligh);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+/**
+ * skills 
+ */
+
+.skills-title {
+  margin-bottom: 10px;
+}
+
+.skills-list {
+  /* padding: 20px 20px 20px 0; */
+}
+
+.skills-item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.skill .title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.skill .title-wrapper data {
+  color: var(--text-yellow);
+}
+
+.skill-progress-bg {
+  background: var(--bg-primary);
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+}
+
+.skill-progress-fill {
+  background: var(--text-yellow);
+  height: 100%;
+  border-radius: inherit;
+}
+
+/* -------------------- contact form --------------------- */
+
+form {
+  justify-content: stretch;
+}
+
+/* ------------------------------responsive------------------------- */
+
+/* portfolio tabs */
+
+.portfolio-tab {
+  background-color: var(--bg-primary);
+  padding: 4px 8px;
+}
+
+/* ------------------------------responsive------------------------- */
+
+@media screen and (max-width: 768px) {
+  .app-main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .avatar {
+    width: 15%;
+    display: block;
+    margin: 0 !important;
+    text-align: center;
+  }
+
+  .avatar-image {
+    width: 100px;
+    height: auto;
+    /* background-color: red; */
+  }
+
+  .user-profession {
+    /* background-color: red !important; */
+  }
+
+  .contacts {
+    /* background-color: red; */
+    flex-direction: row !important;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+  .sidebar .separator {
+    /* background-color: red; */
+    height: 10px;
+    opacity: 0.5;
+    margin-top: 5px;
+  }
+
+  .sidebar {
+    /* position: static!important; */
+    /* background-color: red!important; */
+    top: 0 !important;
+  }
+}
+
+/* mobile */
+
+@media screen and (max-width: 450px) {
+  body {
+    zoom: 1;
+  }
+  #root {
+    padding: 0.5rem !important;
+  }
+
+  div.card {
+    padding: 1rem !important;
+  }
+
+  .contacts {
+    /* background-color: red; */
+    height: 60px !important;
+  }
+
+  .app-main {
+    gap: 0 !important;
+  }
+
+  .services {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .portfolio-tabs {
+    flex-wrap: wrap;
+  }
+
+  #primary {
+    margin-top: 0.5rem;
+  }
+
+  .blogs {
+    grid-template-columns: 1fr !important;
+  }
+
+  #primary .tabs {
+    /* background-color: red; */
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+}
